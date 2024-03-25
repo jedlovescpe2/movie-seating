@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main-content">
+        <div class="heading">
+          <h1 class="title">Sugarland Theater</h1>
+        </div>
+        <div class="movie-container">
+          <label> Select a movie:</label>
+          <select id="movie">
+            <option value="" selected style="display: none">
+              Select a movie ...
+            </option>
+            <option value="50">Anatomy of a Fall (SAR 50)</option>
+            <option value="59">American Fiction (SAR 59)</option>
+            <option value="54">American Symphony (SAR 54)</option>
+            <option value="45">Barbie (SAR 45)</option>
+            <option value="58">Elemental (SAR 58)</option>
+            <option value="55">Killers of the Flower Moon (SAR 55)</option>
+            <option value="60">Maestro (SAR 60)</option>
+            <option value="49">Nimona (SAR 49)</option>
+            <option value="48">Oppenheimer (SAR 48)</option>
+            <option value="46">Past Lives (SAR 46)</option>
+            <option value="47">Poor Things (SAR 47)</option>
+            <option value="56">Robot Dreams (SAR 56)</option>
+            <option value="52">The Holdovers (SAR 52)</option>
+            <option value="45">The Zone of Interest (SAR 45)</option>
+          </select>
+        </div>
+
+        <ul class="showcase">
+          <li>
+            <div class="seat"></div>
+            <small>Available</small>
+          </li>
+          <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+          </li>
+          <li>
+            <div class="seat sold"></div>
+            <small>Sold</small>
+          </li>
+        </ul>
+        <!-- .showcase -->
+        <div class="view-container">
+          <div class="container">
+            <div class="screen-container">
+              <div class="screen">Cinema Screen</div>
+            </div>
+
+            <div class="seats"></div>
+            <!-- .seats -->
+            <!-- .seats-wrapper -->
+          </div>
+        </div>
+
+        <!-- .container -->
+      </div>
+      <!-- .main-content -->
+    </div>
+    <!-- .wrapper -->
+
+    <footer>
+      <p class="text selectedSeats"></p>
+      <p class="text pricing">
+        You have selected <span id="count">0</span> seats for a price of SAR:
+        <span id="total">0</span>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242333;
+  color: #fff;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-content {
+  padding-bottom: 100px; /* Adjust this value based on the actual height of your footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.movie-container {
+  margin: 20px 0 30px;
+  text-align: center;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+.seats {
+  display: flex;
+  flex-direction: column;
+}
+
+.seats .front {
+  margin-bottom: 20px;
+}
+
+.seats .back {
+  margin-top: 20px;
+}
+
+.seat {
+  background-color: #444451;
+  height: 35px;
+  width: 40px;
+  margin: 3px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+  transition: opacity 0.4s, visibility 0.3s;
+}
+
+.seat:hover {
+  z-index: 100;
+}
+
+.reserve-button {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: opacity 0.4s, visibility 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100px;
+  cursor: pointer;
+  background: green;
+  color: white;
+}
+
+.seat:hover .reserve-button {
+  display: block;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  visibility: visible;
+}
+
+.seat.selected {
+  background-color: green;
+}
+
+.seat.selected .reserve-button {
+  background: white;
+  color: black;
+}
+
+.seat.sold {
+  background-color: #fff;
+  color: gray;
+  text-decoration: line-through;
+}
+
+.seat:nth-of-type(4) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(4) {
+  margin-left: 18px;
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.screen-container {
+  transform: rotateX(-50deg);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.screen {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: black;
+  height: 200px;
+  font-size: 3rem;
+  width: 700px;
+  margin: 15px 0;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.5);
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: rgb(158, 248, 158);
+}
+
+.pricing {
+  margin-bottom: 30px;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background: #444451;
+  padding: 0.4rem 1rem;
+  flex-direction: column;
+  line-height: 1.3;
+  text-align: center;
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
+
+  .screen-container {
+    width: max-content;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  select {
+    text-align: center;
+  }
+
+  .main-content {
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: block;
+  }
+  .wrapper,
+  .movie-container,
+  .showcase {
+    max-width: 100%;
+    margin: 0 auto 25px;
+  }
+
+  .movie-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .view-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  .container {
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: hidden; /* Hide the overflow */
+    transform: none; /* Reset any transformations */
+  }
+
+  .row {
+    width: max-content; /* Make row width as wide as its content */
+  }
+
+  footer {
+    width: 100%;
+    background: #444451;
+    padding: 0.3rem 1rem;
+    font-size: 13px;
+  }
+}
